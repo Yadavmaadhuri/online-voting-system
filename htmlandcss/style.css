@@ -1,0 +1,19 @@
+*wrap{
+    margin: 0;
+    border: 0;
+    box-sizing: border-box;
+    font-family:
+}
+body{
+    display:flex;
+    justify-content:center ;
+    align-items: center;
+    min-height:100px;
+
+}
+.wrap{
+    position:;
+    width:100px; 
+    height:500px;
+    background:;
+}
