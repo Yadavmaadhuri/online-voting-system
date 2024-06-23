@@ -1,19 +1,19 @@
 *wrap{
     margin: 0;
     border: 0;
+    padding: 0;
     box-sizing: border-box;
-    font-family:
+    font-family:Arial, Helvetica, sans-serif
 }
 body{
     display:flex;
     justify-content:center ;
     align-items: center;
-    min-height:100px;
+    min-height:100vh;
+    background: gray
 
 }
 .wrap{
-    position:;
-    width:100px; 
-    height:500px;
-    background:;
+    width:
+
 }
