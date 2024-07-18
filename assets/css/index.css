@@ -1,0 +1,124 @@
+/* Base Styles */
+body {
+    font-family: Arial, sans-serif; /* Sets the font for the whole page */
+    margin: 0; /* Removes default margin */
+    padding: 0; /* Removes default padding */
+}
+
+/* Header Styles */
+header {
+    background-color: #2F539A; /* Background color for the header */
+    color: white; /* Text color in the header */
+    padding: 10px 20px; /* Padding inside the header */
+}
+
+/* Base Styles */
+body {
+    font-family: Arial, sans-serif; /* Sets the font for the whole page */
+    margin: 0; /* Removes default margin */
+    padding: 0; /* Removes default padding */
+}
+
+/* Header Styles */
+header {
+    background-color: #02205E; /* Background color for the header */
+    color: white; /* Text color in the header */
+    padding: 10px 20px; /* Padding inside the header */
+}
+
+.navbar {
+    display: flex; /* Flexbox layout for navbar */
+    align-items: center; /* Vertically center items */
+    justify-content: space-between; /* Space between logo and nav */
+}
+
+.logo img {
+    max-height: 50px; /* Sets a max height for the logo */
+}
+
+nav {
+    display: flex; /* Flexbox layout for nav */
+    flex: 1; /* Allow nav to grow and fill available space */
+    justify-content: center; /* Center align links */
+}
+
+nav a {
+    color: white; /* Text color for links */
+    padding: 10px 15px; /* Padding inside links */
+    text-decoration: none; /* Removes underline from links */
+    transition: background-color 0.3s; /* Smooth transition for background color */
+}
+
+nav a:hover, nav a.active {
+    background-color: #02205E /* Background color on hover and active state */
+}
+
+/* Main Content Styles */
+main {
+    display: flex; /* Flexbox layout for main content */
+    flex-direction: column; /* Stacks content vertically */
+    align-items: center; /* Centers content horizontally */
+    padding: 20px; /* Padding inside the main content */
+}
+
+.content {
+    display: flex; /* Flexbox layout for content */
+    justify-content: space-between; /* Space between left and right */
+    width: 100%; /* Full width of the container */
+    max-width: 1200px; /* Maximum width for content */
+}
+
+.left {
+    width: 60%; /* Width of the left section */
+    padding: 20px; /* Padding inside the left section */
+}
+
+.right {
+    width: 30%; /* Width of the right section */
+    padding: 20px; /* Padding inside the right section */
+}
+
+.right img {
+    max-width: 100%; /* Ensures image fits within its container */
+    height: auto; /* Maintains aspect ratio of the image */
+}
+
+/* Hero Section Styles */
+.hero {
+    text-align: center; /* Centers content within hero section */
+    margin: 10px 0; /* Margin around the hero section */
+}
+
+.hero img {
+    max-width: 30%; /* Ensures image fits within its container */
+    height: 10%; /* Maintains aspect ratio of the image */
+}
+
+div.gallery {
+    margin: 5px;
+    border: 1px solid #ccc;
+    float: left;
+    width: 180px;
+  }
+
+  div.gallery:hover {
+    border: 1px solid #777;
+  }
+  
+  div.gallery img {
+    width: 100%;
+    height: auto;
+  }
+  
+  div.desc {
+    padding: 15px;
+    text-align: center;
+  }
+
+/* Footer Styles */
+footer {
+    background-color: #2F539A; /* Background color for the footer */
+    color: white; /* Text color in the footer */
+    text-align: center; /* Centers text within the footer */
+    padding: 10px; /* Padding inside the footer */
+}

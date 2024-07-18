@@ -1,121 +1,87 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-    <title>LogIn</title>
-    <!-- Link to Bootstrap CSS for styling -->
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-    <!-- Link to custom CSS for login page -->
-    <link rel="stylesheet" href="assets/css/login.css">
-    <!-- Link to custom CSS for general styles -->
-    <link rel="stylesheet" href="assets/css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="assets/css/index.css">
 </head>
-
 <body>
-    <!-- Main container with full height -->
-    <div class="container h-100">
-        <!-- Center content horizontally and vertically -->
-        <div class="d-flex justify-content-center h-100">
-            <!-- User card container -->
-            <div class="user_card">
-                <!-- Center the logo within the card -->
-                <div class="d-flex justify-content-center">
-                    <!-- Logo container -->
-                    <div class="brand_logo_container">
-                        <!-- Logo image -->
-                        <img src="assets/image/logo.jpeg" class="brand_logo" alt="Logo">
-                    </div>
-                </div>
-                <!-- PHP logic to include sign-up or sign-in form based on URL parameter -->
-                <?php
-                if (isset($_GET['sign-up'])) {
-                    include_once 'signup.php'; // Include the sign-up form
-                } else {
-                    include_once 'signin.php'; // Include the sign-in form
-                }
-                include_once 'popupmessage.php'; // Include popup message for notifications
-                ?>
+    
+
+<!-- Header Section -->
+<header>
+        <div class="navbar">
+            <!-- Logo Section -->
+            <div class="logo">
+                <img src="assets/image/collegelogo.png" alt="Logo" />
+            </div>
+            <!-- Navigation Links -->
+            <nav>
+                <a href="index.php" class="active">Home</a>
+                <a href="about.php">About</a>
+                <a href="policy.php">Policy</a>
+                <a href="#">Account</a>
+            </nav>
+        </div>
+    </header>
+    <!-- Main Content Section -->
+    <main>
+        <div class="content">
+            <!-- Left Side Content -->
+            <div class="left">
+                <p>Welcome to the dashboard. Here you can manage your account and access various features of the system. Please use the navigation bar to explore different sections.</p>
+                <p>Feel free to explore the dashboard and customize it according to your needs. We provide a user-friendly interface to make your experience smooth and efficient.</p>
+                <p>Our system offers a range of functionalities designed to enhance your productivity. Don't hesitate to reach out if you need any assistance or have questions about using the dashboard.</p>
+            </div>
+
+            <!-- Right Side Content (Image) -->
+            <div class="right">
+                <img src="assets/image/college.jpg" alt="Dashboard Image">
             </div>
         </div>
-    </div>
-    <!-- Link to jQuery library -->
-    <script src="assets/js/jquery-3.7.1.min.js"></script>
-    <!-- Link to Bootstrap JS library -->
-    <script src="assets/js/bootstrap.min.js"></script>
+
+        <!-- Hero Section -->
+        <div class="hero">
+            <a href="signin.php">
+                <img src="assets/image/logo.jpeg" alt="Hero Image" height="1000px" width="2500px" >
+            </a>
+        </div>
+    </main>
+<!-- 
+    <h2>What They Say</h2>
+
+    <div class="gallery">
+  <a target="_blank" href="assets/image/noprofile.jpg">
+    <img src="assets/image/noprofile.jpg" alt="Cinque Terre" width="600" height="400">
+  </a>
+  <div class="desc">Add a description of the image here</div>
+</div>
+
+<div class="gallery">
+  <a target="_blank" href="assets/image/noprofile.jpg">
+    <img src="assets/image/noprofile.jpg" alt="Forest" width="600" height="400">
+  </a>
+  <div class="desc">Add a description of the image here</div>
+</div>
+
+<div class="gallery">
+  <a target="_blank" href="assets/image/noprofile.jpg">
+    <img src="assets/image/noprofile.jpg" alt="Northern Lights" width="600" height="400">
+  </a>
+  <div class="desc">Add a description of the image here</div>
+</div>
+
+<div class="gallery">
+  <a target="_blank" href="assets/image/noprofile.jpg">
+    <img src="assets/image/noprofile.jpg" alt="Mountains" width="600" height="400">
+  </a>
+  <div class="desc">Add a description of the image here</div>
+</div> -->
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2024 Your Company. All rights reserved.</p>
+    </footer>
 </body>
-
 </html>
-
-<?php
-// Include database configuration file
-require_once("config/connection.php");
-
-// Handle Sign Up logic
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    // Sanitize and store user inputs
-    $su_username = mysqli_real_escape_string($db, $_POST['su_username']);
-    $su_contact_no = mysqli_real_escape_string($db, $_POST['su_contact_no']);
-    $su_password = mysqli_real_escape_string($db, sha1($_POST['su_password']));
-    $su_reenter_password = mysqli_real_escape_string($db, sha1($_POST['su_reenter_password']));
-    $user_role = "Voter";
-
-    // Check if passwords match
-//         $sql = "INSERT INTO cregister (fname, lname, email, password, country, phone) VALUES ('$fname',
-// 		 '$lname', '$email', '$password', '$country', '$phone')";
-
-//         if (mysqli_query($conn, $sql)) {
-//             header("Location: login.php");
-//             exit;
-//         } else {
-//             echo "Error adding the details: " . $sql . "<br>" . mysqli_error($conn);
-//         }
-    if ($su_password == $su_reenter_password) {
-        // Insert user data into the database
-        mysqli_query($conn, "INSERT INTO signup(su_username, su_contact_no, su_password, user_role) 
-            VALUES('$su_username', '$su_contact_no', '$su_password', '$user_role')") or die(mysqli_error($conn));
-        // Redirect to sign-up page with success message
-        // echo "<script>location.assign('index.php?sign-up=1&registered=1');</script>";
-		echo "data inserted successfully.";
-    } else {
-		echo "failed";
-        // Redirect to sign-up page with error message
-        // echo "<script>location.assign('index.php?sign-up=1&invalid=1');</script>";
-    }
-}
-
-// Handle Login logic
-if (isset($_POST['loginbtn'])) {
-    // Sanitize and store user inputs
-    $contact_no = mysqli_real_escape_string($db, $_POST['contact_no']);
-    $password = mysqli_real_escape_string($db, sha1($_POST['password']));
-
-    // Fetch user data from the database
-    $fetchingData = mysqli_query($db, "SELECT * FROM users WHERE contact_no='$contact_no'") or die(mysqli_error($db));
-
-    // Check if user exists
-    if (mysqli_num_rows($fetchingData) > 0) {
-        $data = mysqli_fetch_assoc($fetchingData);
-
-        // Validate user credentials
-        if ($contact_no == $data['contact_no'] && $password == $data['password']) {
-            // Start user session and store user details
-            session_start();
-            $_SESSION['user_role'] = $data['user_role'];
-            $_SESSION['username'] = $data['username'];
-
-            // Redirect to admin or voter dashboard based on user role
-            if ($data['user_role'] == "Admin") {
-                echo "<script>location.assign('admin/index.php');</script>";
-            } else {
-                echo "<script>location.assign('voters/index.php');</script>";
-            }
-        } else {
-            // Redirect to login page with invalid access message
-            echo "<script>location.assign('index.php?invalid_access=1');</script>";
-        }
-    } else {
-        // Redirect to sign-up page with not registered message
-        echo "<script>location.assign('index.php?sign-up=1&not_registered=1');</script>";
-    }
-}
-?>
