@@ -25,6 +25,7 @@
             </nav>
         </div>
     </header>
+    
     <!-- Main Content Section -->
     <main>
         <div class="content">

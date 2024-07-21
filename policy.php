@@ -4,24 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Privacy Policy - Class Representative Voting System</title>
-    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="assets/css/index.css">
 </head>
 <body>
-    <header>
-        <h1>Privacy Policy</h1>
-        <nav>
-            <ul>
-                <li><a href="index.php">Home</a></li>
-                <li><a href="login.php">Login</a></li>
-                <li><a href="register.php">Register</a></li>
-                <li><a href="about.php">About</a></li>
-                <li><a href="policy.php">Policy</a></li>
-            </ul>
-        </nav>
-    </header>
+ <!-- Header Section -->
+<header>
+        <div class="navbar">
+            <!-- Logo Section -->
+            <div class="logo">
+                <img src="assets/image/collegelogo.png" alt="Logo" />
+            </div>
+            <!-- Navigation Links -->
+            <nav>
+                <a href="index.php" >Home</a>
+                <a href="about.php">About</a>
+                <a href="policy.php" class="active">Policy</a>
+                <a href="account.php">Account</a>
+            </nav>
+        </div>
+</header>
     <div class="policycontainer">
        
        <main>
+
        <section>
            <h2>1. Collection of Information</h2>
            <p><strong>Personal Information:</strong> VoteCamp collects personal information from users participating in the voting process, 
@@ -58,5 +63,9 @@
        </main>
      
    </div>
+       <!-- Footer Section -->
+       <footer>
+        <p>&copy; 2024 Your Company. All rights reserved.</p>
+    </footer>
 </body>
 </html>
